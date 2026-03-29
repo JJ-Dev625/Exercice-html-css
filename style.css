@@ -1,0 +1,46 @@
+/* On centre tout dans le body */
+body {
+    background-color: #1D2A44;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.05); /* Un blanc très transparent */
+    border: 1px solid rgba(255, 255, 255, 0.1);  /* Bordure discrète */
+    border-radius: 20px;                        /* Coins bien arrondis */
+    padding: 30px;
+    width: 90%;                                 /* Largeur adaptable sur mobile */
+    max-width: 350px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Ombre pour le relief */
+}
+
+/* Espacer les liens verticalement */
+.links a {
+    display: block;
+    margin: 15px 0;
+    color: #4CAF50;
+    text-decoration: aquamarine
+    font-weight: bold;
+}
+
+
+button:hover {
+    background-color: #45a049; /* Le vert devient un peu plus foncé au survol */
+    transform: scale(1.05);     /* Le bouton grossit très légèrement */
+    transition: all 0.3s ease; /* Rend l'effet tout fluide */
+}
+
+
+footer {
+    text-align: center; /* Pour centrer le texte à l'intérieur */
+    width: 100%;        /* S'assure que le footer occupe toute la largeur */
+    margin-top: 20px;
+    color: white;
+    padding: 10px;
+}
