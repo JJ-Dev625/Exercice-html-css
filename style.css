@@ -1,4 +1,11 @@
-/* On centre tout dans le body */
+ /* --- Styles de base (Mobile First) --- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-color: #1D2A44;
     color: white;
@@ -6,41 +13,76 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center; /* Centre verticalement si l'écran est grand */
+    min-height: 100vh;
     padding: 20px;
 }
 
 .card {
-    background-color: rgba(255, 255, 255, 0.05); /* Un blanc très transparent */
-    border: 1px solid rgba(255, 255, 255, 0.1);  /* Bordure discrète */
-    border-radius: 20px;                        /* Coins bien arrondis */
-    padding: 30px;
-    width: 90%;                                 /* Largeur adaptable sur mobile */
-    max-width: 350px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 25px; /* Légèrement réduit pour les petits écrans */
+    width: 100%;   /* Utilise tout l'espace dispo sur mobile */
+    max-width: 400px; /* Limite la largeur sur tablette/PC */
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Ombre pour le relief */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* Espacer les liens verticalement */
+/* Typographie responsive */
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Liens transformés en boutons pour une meilleure zone de clic sur mobile */
 .links a {
     display: block;
-    margin: 15px 0;
+    margin: 12px 0;
+    padding: 12px;
     color: #4CAF50;
-    text-decoration: aquamarine
+    text-decoration: none; /* Corrigé : 'aquamarine' n'est pas une valeur de decoration */
     font-weight: bold;
+    border: 1px solid #4CAF50;
+    border-radius: 10px;
+    transition: all 0.3s ease;
 }
 
-
-button:hover {
-    background-color: #45a049; /* Le vert devient un peu plus foncé au survol */
-    transform: scale(1.05);     /* Le bouton grossit très légèrement */
-    transition: all 0.3s ease; /* Rend l'effet tout fluide */
+/* Effets de survol (Hover) */
+.links a:hover {
+    background-color: #4CAF50;
+    color: white;
+    transform: translateY(-3px); /* Petit effet de levée */
 }
-
 
 footer {
-    text-align: center; /* Pour centrer le texte à l'intérieur */
-    width: 100%;        /* S'assure que le footer occupe toute la largeur */
-    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+    margin-top: auto; /* Pousse le footer vers le bas */
+    padding: 20px 10px;
+    gap: 5px;
+    font-size: 0.9rem;
+    opacity: 0.8;
     color: white;
-    padding: 10px;
+}
+
+/* --- Media Queries --- */
+
+/* Pour les écrans très petits (moins de 350px) */
+@media (max-width: 350px) {
+    .card {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Pour les tablettes et PC (plus de 768px) */
+@media (min-width: 768px) {
+    .card {
+        padding: 40px;
+        max-width: 450px; /* On peut se permettre une carte un peu plus large */
+    }
 }
